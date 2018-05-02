@@ -3,6 +3,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public class HomePageTest {
@@ -12,10 +13,14 @@ public class HomePageTest {
         driver = new FirefoxDriver();
         driver.get("http://comaqa.by/en/");
     }
+
+    @AfterMethod
+    public void close(){
+        driver.close();
+    }
     @Test
     public void chechTitleTest(){
         Assert.assertEquals(driver.getTitle(), "QA Conference in Minsk COMAQA Spring | COMAQA.BY – QA Automation Community Belarus");
-        driver.close();
 
         /*WebDriver driver = new FirefoxDriver();
         driver.get("https://www.yandex.ru/");
