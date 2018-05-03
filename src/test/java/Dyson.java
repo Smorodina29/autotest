@@ -1,4 +1,3 @@
-
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -12,7 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Set;
 
-public class Yandex {
+public class Dyson {
+
     private WebDriver driver;
 
     @Before
@@ -53,11 +53,7 @@ public class Yandex {
 
         boolean isPresent = driver.findElements(By.id("ctl00_content_0_InnerCarousel_SlidesRepeater_ctl00_standardSlide_StandardSlideDiv")).size() > 0;
         Assert.assertEquals(isPresent, true);
-    }
 
-    @Test
-    public void TestDyson() throws InterruptedException {
-        driver.get("https://www.dyson.com.ru/");
         WebElement element = driver.findElement(By.id("ctl00_cphNavigation_topNavigation1_TopNavigationLinksRepeater_ctl02_TopNavigationLink"));
         Thread.sleep(3000);
         element.click();
@@ -65,8 +61,8 @@ public class Yandex {
         Thread.sleep(3000);
         element2.click();
         Thread.sleep(3000);
-        boolean isPresent = driver.findElements(By.cssSelector("a[href*=\"/accessories/hepa-filter-968125-05\"]")).size() > 0;
-        Assert.assertEquals(isPresent, true);
+        boolean isPresent2 = driver.findElements(By.cssSelector("a[href*=\"/accessories/hepa-filter-968125-05\"]")).size() > 0;
+        Assert.assertEquals(isPresent2, true);
     }
 
 }
